@@ -1,5 +1,5 @@
 <html>
-	<!--
+<!--
 		Copyright 2008 Kevin Timmerman <mmpi2008 [@t] compendiumarcana [d0t] com>
 		Copyright 2017 nucular <github.com/nucular>
 
@@ -18,39 +18,51 @@
 		You should have received a copy of the GNU General Public License
 		along with this program.  If not, see http://www.gnu.org/licenses/.
 	-->
-	<head>
-		<link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
-		<script src="//unpkg.com/vue@next"></script>
-		<script src="//unpkg.com/element-plus"></script>
-		<title>MMPI-2 Scoring</title>
-	</head>
-	<body>
-		<script type="text/javascript" src="./data.js"></script>
-		<script type="text/javascript" src="./script.js"></script>
 
-		<form name="config" action="#">
-			<p>
-				<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked>Male&nbsp;
-				<input type="radio" name="gender" value="F" onclick="set_gender(1);">Female<br>
-			</p>
-			<p>
-				<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked>Long Form&nbsp;
-				<input type="radio" name="testform" value="S" onclick="use_long_form(false);">Short Form<br>
+<head>
+	<link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+	<script src="//unpkg.com/vue@next"></script>
+	<script src="//unpkg.com/element-plus"></script>
+	<title>MMPI-2 Scoring</title>
+</head>
 
-			</p>
-		</form>
+<body>
+	<script type="text/javascript" src="./data.js"></script>
+	<script type="text/javascript" src="./script.js"></script>
 
-		<h1>
-			<script type="text/javascript">document.write(questions[0]);</script>
-		</h1>
+
+	<form name="config" action="#">
+		<p>
+			<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked>Male&nbsp;
+			<input type="radio" name="gender" value="F" onclick="set_gender(1);">Female<br>
+		</p>
+		<p>
+			<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked>Long Form&nbsp;
+			<input type="radio" name="testform" value="S" onclick="use_long_form(false);">Short Form<br>
+
+		</p>
+	</form>
+
+	<el-card class="box-card">
+		<template #header></template>
+		<div class="card-header">
+			<h1>
+				<script type="text/javascript">document.write(questions[0]);</script>
+			</h1>
+		</div>
+		</template>
+
 
 		<form name="questions" action="#">
 			<p>
 				<script type="text/javascript">doc_write_all_questions();</script>
 				<br>
-				<input type="button" value="Score" onclick="score_rb(document.forms.questions);" class="el-button el-button--primary">
+				<input type="button" value="Score" onclick="score_rb(document.forms.questions);"
+					class="el-button el-button--primary">
 				<br><br>
 			</p>
 		</form>
-	</body>
+	</el-card>
+</body>
+
 </html>
