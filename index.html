@@ -41,14 +41,14 @@
 			</el-radio-group>
 		
 		</div>
-		<div  name="config" action="#">
 		
+			<el-form-item label="config">
 			<el-radio-group v-model="radio2" class="ml-4">
 			  <el-radio-button :label="L" size="large" name="testform" onclick="use_long_form(true);">Long Form</el-radio>
 			  <el-radio-button :label="S" size="large" name="testform" onclick="use_long_form(false);">Short Form</el-radio>
 			</el-radio-group>
+			</el-form-item>
 		
-		</div>
 		<!--<form name="config" action="#">
 			<p>
 				<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked>Male&nbsp;
