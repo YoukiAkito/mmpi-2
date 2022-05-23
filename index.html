@@ -29,41 +29,42 @@
 <body>
 	<script>
 		const App = {};
-		const app = Vue.createApp(App)
+		const app = Vue.createApp(App);
 		app.use(ElementPlus);
-		app.mount('#app');
+		app.mount("#app");
 	</script>
 	<script type="text/javascript" src="./data.js"></script>
 	<script type="text/javascript" src="./script.js"></script>
 
 	<div id="app">
-		<form name="config" action="#">
+		<el-form :model="form" label-width="120px" name="config" action="#">
 			<p>
-				<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked>Male&nbsp;
-				<input type="radio" name="gender" value="F" onclick="set_gender(1);">Female<br>
+				<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked />Male&nbsp;
+				<input type="radio" name="gender" value="F" onclick="set_gender(1);" />Female<br />
 			</p>
 			<p>
-				<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked>Long Form&nbsp;
-				<input type="radio" name="testform" value="S" onclick="use_long_form(false);">Short Form<br>
-
+				<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked />Long Form&nbsp;
+				<input type="radio" name="testform" value="S" onclick="use_long_form(false);" />Short Form<br />
 			</p>
-		</form>
-
+		</el-form>
 		<el-card class="box-card" shadow="always">
-
 			<div class="card-header">
 				<h1>
-					<script type="text/javascript">document.write(questions[0]);</script>
+					<script type="text/javascript">
+						document.write(questions[0]);
+					</script>
 				</h1>
 			</div>
 
 			<form name="questions" action="#">
 				<p>
-					<script type="text/javascript">doc_write_all_questions();</script>
-					<br>
+					<script type="text/javascript">
+						doc_write_all_questions();
+					</script>
+					<br />
 					<input type="button" value="Score" onclick="score_rb(document.forms.questions);"
-						class="el-button el-button--primary">
-					<br><br>
+						class="el-button el-button--primary" />
+					<br /><br />
 				</p>
 			</form>
 		</el-card>
