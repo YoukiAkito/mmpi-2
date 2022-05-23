@@ -19,6 +19,9 @@
 		along with this program.  If not, see http://www.gnu.org/licenses/.
 	-->
 	<head>
+		<link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+		<script src="//unpkg.com/vue@next"></script>
+		<script src="//unpkg.com/element-plus"></script>
 		<title>MMPI-2 Scoring</title>
 	</head>
 	<body>
@@ -45,7 +48,7 @@
 			<p>
 				<script type="text/javascript">doc_write_all_questions();</script>
 				<br>
-				<input type="button" value="Score" onclick="score_rb(document.forms.questions);">
+				<input type="button" value="Score" onclick="score_rb(document.forms.questions);" class="el-button el-button--primary">
 				<br><br>
 			</p>
 		</form>
