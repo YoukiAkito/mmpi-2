@@ -34,20 +34,20 @@
 		<script type="text/javascript" src="./script.js"></script>
 
 		<div  name="config" action="#">
-		<div class="mb-2 flex items-center text-sm">
+		
 			<el-radio-group v-model="radio1" class="ml-4">
-			  <el-radio-button label="M" size="large" name="gender" onclick="set_gender(0);">Male</el-radio>
-			  <el-radio-button label="F" size="large" name="gender" onclick="set_gender(1);">Female</el-radio>
+			  <el-radio-button :label="M" size="large" name="gender" onclick="set_gender(0);">Male</el-radio>
+			  <el-radio-button :label="F" size="large" name="gender" onclick="set_gender(1);">Female</el-radio>
 			</el-radio-group>
-		</div>
+		
 		</div>
 		<div  name="config" action="#">
-		<div class="mb-2 flex items-center text-sm">
+		
 			<el-radio-group v-model="radio2" class="ml-4">
-			  <el-radio-button label="L" size="large" name="testform" onclick="use_long_form(true);">Long Form</el-radio>
-			  <el-radio-button label="S" size="large" name="testform" onclick="use_long_form(false);">Short Form</el-radio>
+			  <el-radio-button :label="L" size="large" name="testform" onclick="use_long_form(true);">Long Form</el-radio>
+			  <el-radio-button :label="S" size="large" name="testform" onclick="use_long_form(false);">Short Form</el-radio>
 			</el-radio-group>
-		</div>
+		
 		</div>
 		<!--<form name="config" action="#">
 			<p>
