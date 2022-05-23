@@ -28,9 +28,10 @@
 
 <body>
 	<script>
-		createApp(App)
-			.use(ElementPlus)
-			.mount('#app')
+		const App = {};
+		const app = Vue.createApp(App)
+		app.use(ElementPlus);
+		app.mount('#app');
 	</script>
 	<script type="text/javascript" src="./data.js"></script>
 	<script type="text/javascript" src="./script.js"></script>
