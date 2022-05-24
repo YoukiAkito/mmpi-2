@@ -31,7 +31,7 @@
 		const App = {
 			data() {
 				return {
-					
+
 				}
 			},
 		};
@@ -42,39 +42,60 @@
 	<script type="text/javascript" src="./data.js"></script>
 	<script type="text/javascript" src="./script.js"></script>
 
-	<div id="app">
-		<el-form :model="form" label-width="120px" name="config" action="#">
-			<p>
-				<input type="radio" name="gender" value="M" onclick="set_gender(0);" class="border" checked />Male&nbsp;
-				<input type="radio" name="gender" value="F" onclick="set_gender(1);" class="border"/>Female<br />
-			</p>
-			<p>
-				<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked />Long Form&nbsp;
-				<input type="radio" name="testform" value="S" onclick="use_long_form(false);" />Short Form<br />
-			</p>
-		</el-form>
-		<el-card class="box-card" shadow="always">
-			<div class="card-header">
-				<h1>
-					<script type="text/javascript">
-						document.write(questions[0]);
-					</script>
-				</h1>
-			</div>
-
-			<form name="questions" action="#">
+	<div id="app" class="common-layout">
+		<el-card style="text-align:center;vertical-align:middle;">
+			<el-form :inline="true" :model="form" label-width="120px" name="config" action="#" class="demo-form-inline">
 				<p>
-					<script type="text/javascript">
-						doc_write_all_questions();
-					</script>
-					<br />
-					<input type="button" value="Score" onclick="score_rb(document.forms.questions);"
-						class="el-button el-button--primary" />
-					<br /><br />
+					<input type="radio" name="gender" value="M" onclick="set_gender(0);" checked />Male&nbsp;
+					<input type="radio" name="gender" value="F" onclick="set_gender(1);" />Female<br />
 				</p>
-			</form>
+				<p>
+					<input type="radio" name="testform" value="L" onclick="use_long_form(true);" checked />Long
+					Form&nbsp;
+					<input type="radio" name="testform" value="S" onclick="use_long_form(false);" />Short Form<br />
+				</p>
+			</el-form>
 		</el-card>
+		<el-container>
+			<el-header>
+				<el-card class="el-card card-header" shadow="always">
+
+					<h1>
+						<script type="text/javascript">
+							document.write(questions[0]);
+						</script>
+					</h1>
+
+				</el-card>
+			</el-header>
+			<el-main>
+				<el-card class="el-card box-card" shadow="always">
+					<form name="questions" action="#" class="el-card box-card">
+
+						<script type="text/javascript">
+							doc_write_all_questions();
+						</script>
+			</el-main>
+			</el-card>
+			<br />
+			<el-footer style="text-align:center;vertical-align:middle;">
+				<input type="button" value="Score" onclick="score_rb(document.forms.questions);"
+					class="el-button el-button--primary" />
+			</el-footer>
+			<br /><br />
+
+
+
+		</el-container>
 	</div>
 </body>
 
 </html>
+
+<style>
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+</style>
